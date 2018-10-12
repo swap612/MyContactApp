@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      MY Contact App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <span *ngFor="let contact of contactlist" >
+      <ion-item *ngIf="contact.displayName">
+          {{contact.displayName}} = {{contact.phoneNumbers[0].value}}
+      </ion-item>
+    </span>
+  </ion-list>
+</ion-content>
+
+
