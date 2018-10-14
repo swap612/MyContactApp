@@ -7,6 +7,16 @@
 </ion-header>
 
 <ion-content padding>
+
+          <ion-searchbar
+          [(ngModel)]="myInput"
+          [showCancelButton]="shouldShowCancel"
+          (ionInput)="searchContact(myInput)"
+          (ionCancel)="searchContact(myInput)"
+          placeholder="Search Contact" >
+        
+        </ion-searchbar>
+
   <ion-list>
     <span *ngFor="let contact of contactlist" >
       <ion-item *ngIf="contact.displayName">

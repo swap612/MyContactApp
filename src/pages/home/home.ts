@@ -28,6 +28,21 @@ export class HomePage {
 
   }
 
+  searchContact(searchText){
+    var opts = {   
+      filter : searchText,                                
+      multiple: true,        
+      hasPhoneNumber:true,                             
+      fields:  [ 'displayName', 'name' ]
+    };
+    this.contacts.find([ 'displayName', 'name' ],opts).then((contacts) => {
+      this.contactlist = contacts;
+    }, (error) => {
+      console.log(error);
+    })
+    
+  }
+
   // display(){
 
   //   let contact: Contact = this.contacts.create();
